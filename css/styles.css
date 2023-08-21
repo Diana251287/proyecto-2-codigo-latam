@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Lato&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+/* Aquí les dejamos como ayuda este "reset" en el cual ajustamos algunas propiedades
+*  cuyos valores asigna por defecto el navegador.
+*/
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Para que el scrolleo en la one page sea suave */
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    background-color: #0000009d;
+}
+header{
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    height: 60px;
+    width: 100%;
+    background-color: #fbfbfb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 3px 10px -5px #5f5f5f;
+    z-index: 10;
+}
+.Logo{
+    
+    margin: 5px 20px;
+    font-family: 'Lavishly Yours', cursive;
+    font-size: 2em;
+    transform: rotate(-30deg);
+    transition: 0.5s ease;
+}
+.Logo:hover{
+    transform: rotate(0deg);
+    transition: 0.5s ease;
+}
+
+ul#menu {
+    display: flex;
+    font-size: 20px;
+
+}
+li.menu-item {
+    height: 60px;
+    padding: 16px;
+    display: inline-block;
+    position: relative;
+    transition: 0.6s ease-out;
+    
+} li.menu-item::after{
+    content: '✨';
+}
+li.menu-item:hover{
+    background-color: #e98ad6;
+    transition: 0.6s ease-out;
+}
+
+.bg-img{
+    opacity: .7;
+    object-fit: cover;
+    position: fixed;
+    z-index:-1;
+
+}
+section{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    /* padding-top: 120px; */
+}
+section#inicio{
+    margin: 0 auto;
+    position: relative;
+    /* top: 150px; */
+    flex-wrap: 30px;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    /* height: fit-content; */
+    max-width: 90vw;
+    
+}
+section#contacto{
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;   
+}
+.imagen-2{
+    border-radius: 50%;
+    /* width: 200px; */
+    max-width: 300px;
+    min-width: 100px;
+}
+
+h1{
+    font-family: 'Lavishly Yours', cursive;
+    font-weight: 100;
+    font-size: 80px;
+    text-align: center;
+}
+
+article.presentacion{
+    width: 100%;
+    text-align: center;
+}
+a.boton{
+    background-color: #af599e;
+    color: #fbfbfb;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 20px;
+    display: inline-block;
+    border: #af599e solid 1px;
+    transition: .5s ease-in-out
+}
+a.boton:hover{
+    color: #000;
+    background-color: #fbfbfb;
+    border: #000 solid 1px;
+    transition: .5s ease-in-out ;
+}
+
+h2{
+    font-size: 28px;
+}
+article.hablemos{
+    color: #fbfbfb;
+    background: rgba(175, 89, 158, 0.836);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.space{
+    height: 50px;
+}
+
+.animation{
+    opacity: 0;
+    transition: all 0.8s;
+}
+.animation1{
+    
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.move{
+    animation: moving 1s;
+}
+
+@keyframes moving {
+    0%{ transform: translateX(-200px) ;
+
+    }   
+    100%{ transform: translate(0);
+
+    } 
+}
+
+
+ul#contacto-links{
+    display: flex;
+    margin-top: 20px; 
+}
+.icon{ 
+    margin: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    width: 80px;
+    display: flex;
+    filter: invert(100%);
+}
+.icon:hover{
+    filter: invert(0%);
+}
+
+div.presentacion_texto{
+    display: flex;  
+}
+div.sobre_mi{
+    margin: 0 auto;
+    width: 50vw;
+}
+
+p{
+    margin: 20px;
+   /*  text-align: left; */
+}
+
+/* Para quitar los puntos a los items de listas */
+ul{
+    list-style: none;
+}
+
+
+/* Para que los enlaces hereden el color de texto y no tengan subrayado */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+footer{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #af599e;
+    color: #fbfbfb;
+}
+
+@media only screen and (max-width: 768px) {
+    div.presentacion_texto{
+        flex-direction: column;  
+    }
+
+    .imagen-2{
+        width: 30vw;
+    }
+}
+
+
+
+/* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
+*  el margin: auto; para tenerlo centrado fácilmente ;)
+*/
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Recomendaciones! 
+*  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
+*    "estilos generales". Una buena idea sería comenzar por el <body> ;)
+*
+*  - Recuerden que queremos evitar "repetir código", en CSS usando la cualidad de la herencia
+*    podemos setear ciertas propiedades en un elemento padre y dejar que sean heredadas (por ejemplo: font-size)
+*
+*  - Nadie sabe todas las propiedades CSS de memoria, si no saben como hacer algo no lo recuerdan, la respuesta
+*    pueden encontrarla buscando en la web algo como "CSS como hacer ... " o "propiedad css para hacer ..."
+*
+*  - Usen mucho las herramientas para desarrolladores del navegador para ir
+*    probando el CSS que escriben, resolver dudas y problemas.
+*
+*  - Paciencia, resiliencia y creatividad! No se desanimen, las primeras experiencias maquetando con HTML y CSS
+*    pueden ser frustrantes, pero estas habilidades se van desarrollando con la experiencia, es como aprender
+*    un trabajo manual, hacer una artesanía, tocar un instrumento musical... la práctica es todo!
+*/
